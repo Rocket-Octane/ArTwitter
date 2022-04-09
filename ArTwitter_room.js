@@ -1,11 +1,12 @@
 //ADD YOUR FIREBASE LINKS HERE
 const firebaseConfig = {
-  apiKey: "AIzaSyAHfK5XDCPStXbjavaat3uYeZ3tlYHE_EI",
-  authDomain: "kwitter-86dab.firebaseapp.com",
-  projectId: "kwitter-86dab",
-  storageBucket: "kwitter-86dab.appspot.com",
-  messagingSenderId: "421522730509",
-  appId: "1:421522730509:web:ddca93aab20005a8d76f44"
+  apiKey: "AIzaSyDMzZ-HUE8ryC0bAnkIx-K7r_x6sW_i1Fo",
+  authDomain: "artwitter-8932d.firebaseapp.com",
+  databaseURL: "https://artwitter-8932d-default-rtdb.firebaseio.com",
+  projectId: "artwitter-8932d",
+  storageBucket: "artwitter-8932d.appspot.com",
+  messagingSenderId: "427011711318",
+  appId: "1:427011711318:web:f6ba0d04ee82d6d91676f7"
 };
 
 // Initialize Firebase
@@ -14,16 +15,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 user_name = localStorage.getItem("user_name");
-document.getElementById("user_name_label").innerHTML = "Welcome " + user_name + "!";
+document.getElementById("user_name").innerHTML = "Welcome " + user_name + "!";
 
-function addRoom(){
-      room_name = document.getElementById("room_name").value;
-      firebase.database().ref("/").child(room_name).update({
-            purpose: "adding room name"
-      });
-      console.log(room_name);
-      localStorage.setItem("room_name", room_name);
-      window.location = "kwitter_page.html";
+function addRoom() {
+  room_name = document.getElementById("room_name").value;
+  firebase.database().ref("/").child(room_name).update({
+    purpose: "adding room name"
+  });
+  console.log(room_name);
+  localStorage.setItem("room_name", room_name);
+  window.location = "ArTwitter_page.html";
 }
 
 function getData() {
@@ -34,7 +35,7 @@ function getData() {
       Room_names = childKey;
       //Start code
       console.log("Room names: " + Room_names);
-      row = "<div class='room_name' id="+Room_names+" onclick='redirectToRoomName(this.id)'>#" + Room_names + "</div><hr>";
+      row = "<div class='room_name' id=" + Room_names + " onclick='redirectToRoomName(this.id)'>#" + Room_names + "</div><hr>";
       document.getElementById("output").innerHTML += row;
       //End code
     });
@@ -42,13 +43,13 @@ function getData() {
 }
 getData();
 
-function redirectToRoomName(name){
+function redirectToRoomName(name) {
   console.log(name);
   localStorage.setItem("room_name", name);
-  window.location = "kwitter_page.html";
+  window.location = "ArTwitter_page.html";
 }
 
-function logout(){
+function logout() {
   localStorage.removeItem("user_name");
   localStorage.removeItem("room_name");
   window.location = "index.html";

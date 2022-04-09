@@ -21,11 +21,16 @@ body {
 	height: 100%;
 }
 
+.messages_div {
+	background-color: lightyellow;
+}
+
 .header img {
 	width: 80px;
 	margin-left: -15px;
 }
-#add_label{
+
+#add_label {
 	color: white;
 }
 
@@ -37,26 +42,32 @@ body {
 	margin-bottom: 30px;
 	padding-top: 100px;
 }
-#see{
+
+#see {
 	color: white;
 }
-#join{
+
+#join {
 	color: white;
 }
+
 .logo {
 	width: 100px;
 	margin-top: 30px;
 	border-radius: 40px;
 	margin-bottom: 120px;
 }
-#user_name{
+
+#user_name {
 	margin-bottom: 50px;
 }
-#user_label{
+
+#user_label {
 	font-size: 18px;
 	font-weight: 700;
 	color: black;
 }
+
 #login_button {
 	width: 80%;
 	border-radius: 15px;
@@ -84,7 +95,8 @@ body {
 .input_div_room_page {
 	width: 80%;
 }
-.input_div_room_page label{
+
+.input_div_room_page label {
 	font-size: 22px;
 }
 
